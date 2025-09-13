@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, Clock, Users, AlertCircle } from 'lucide-react';
+import ExamRegistrationModal from '@/components/modals/ExamRegistrationModal';
 
 const ExamsSection = () => {
   const upcomingExams = [
@@ -115,12 +116,17 @@ const ExamsSection = () => {
                   </div>
 
                   <div className="pt-4">
-                    <Button 
-                      className="w-full" 
-                      variant={exam.status === 'registration-open' ? 'default' : 'outline'}
-                    >
-                      {exam.status === 'registration-open' ? 'Register Now' : 'View Details'}
-                    </Button>
+                    {exam.status === 'registration-open' ? (
+                      <ExamRegistrationModal examTitle={exam.title} examDate={exam.date}>
+                        <Button className="w-full">
+                          Register Now
+                        </Button>
+                      </ExamRegistrationModal>
+                    ) : (
+                      <Button className="w-full" variant="outline">
+                        View Details
+                      </Button>
+                    )}
                   </div>
                 </div>
               </CardContent>
@@ -129,7 +135,12 @@ const ExamsSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" variant="outline" className="px-8">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="px-8"
+            onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             View All Exams
           </Button>
         </div>

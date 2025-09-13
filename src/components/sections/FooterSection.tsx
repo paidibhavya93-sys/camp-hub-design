@@ -18,16 +18,36 @@ const FooterSection = () => {
               and a nurturing environment for academic excellence.
             </p>
             <div className="flex gap-3">
-              <Button size="sm" variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button 
+                size="sm" 
+                variant="outline" 
+                className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                onClick={() => window.open('https://facebook.com/camphelp', '_blank')}
+              >
                 <Facebook className="h-4 w-4" />
               </Button>
-              <Button size="sm" variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button 
+                size="sm" 
+                variant="outline" 
+                className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                onClick={() => window.open('https://twitter.com/camphelp', '_blank')}
+              >
                 <Twitter className="h-4 w-4" />
               </Button>
-              <Button size="sm" variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button 
+                size="sm" 
+                variant="outline" 
+                className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                onClick={() => window.open('https://instagram.com/camphelp', '_blank')}
+              >
                 <Instagram className="h-4 w-4" />
               </Button>
-              <Button size="sm" variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button 
+                size="sm" 
+                variant="outline" 
+                className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                onClick={() => window.open('https://youtube.com/camphelp', '_blank')}
+              >
                 <Youtube className="h-4 w-4" />
               </Button>
             </div>
@@ -37,12 +57,12 @@ const FooterSection = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground smooth-transition">About Us</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground smooth-transition">Admissions</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground smooth-transition">Courses</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground smooth-transition">Faculty</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground smooth-transition">Student Portal</a></li>
-              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground smooth-transition">Alumni</a></li>
+              <li><a href="#timings" onClick={(e) => { e.preventDefault(); document.getElementById('timings')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-primary-foreground/80 hover:text-primary-foreground smooth-transition">Timings</a></li>
+              <li><a href="#facilities" onClick={(e) => { e.preventDefault(); document.getElementById('facilities')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-primary-foreground/80 hover:text-primary-foreground smooth-transition">Facilities</a></li>
+              <li><a href="#events" onClick={(e) => { e.preventDefault(); document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' }); }} className="text-primary-foreground/80 hover:text-primary-foreground smooth-transition">Events</a></li>
+              <li><a href="mailto:info@camphelp.edu" className="text-primary-foreground/80 hover:text-primary-foreground smooth-transition">Contact</a></li>
+              <li><a href="tel:+15551234567" className="text-primary-foreground/80 hover:text-primary-foreground smooth-transition">Call Us</a></li>
+              <li><a href="#" className="text-primary-foreground/80 hover:text-primary-foreground smooth-transition">About</a></li>
             </ul>
           </div>
 

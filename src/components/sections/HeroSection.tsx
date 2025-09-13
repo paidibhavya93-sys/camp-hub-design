@@ -34,6 +34,7 @@ const HeroSection = () => {
           <Button 
             size="lg" 
             className="bg-white text-primary hover:bg-white/90 elegant-shadow text-lg px-8 py-6"
+            onClick={() => document.getElementById('facilities')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Explore Facilities
           </Button>
@@ -41,6 +42,7 @@ const HeroSection = () => {
             variant="outline" 
             size="lg"
             className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-6"
+            onClick={() => document.getElementById('timings')?.scrollIntoView({ behavior: 'smooth' })}
           >
             View Schedule
           </Button>

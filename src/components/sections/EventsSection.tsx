@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Users, Clock, Trophy, Music, BookOpen, Lightbulb } from 'lucide-react';
+import EventRegistrationModal from '@/components/modals/EventRegistrationModal';
 
 const EventsSection = () => {
   const events = [
@@ -91,7 +92,7 @@ const EventsSection = () => {
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section id="events" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -148,12 +149,17 @@ const EventsSection = () => {
                     </div>
                   </div>
 
-                  <Button 
-                    className="w-full" 
-                    variant={event.status === 'registration-open' ? 'default' : 'outline'}
-                  >
-                    {event.status === 'registration-open' ? 'Register Now' : 'Learn More'}
-                  </Button>
+                  {event.status === 'registration-open' ? (
+                    <EventRegistrationModal eventTitle={event.title} eventDate={event.date}>
+                      <Button className="w-full">
+                        Register Now
+                      </Button>
+                    </EventRegistrationModal>
+                  ) : (
+                    <Button className="w-full" variant="outline">
+                      Learn More
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             );
@@ -161,7 +167,12 @@ const EventsSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="px-8">
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="px-8"
+            onClick={() => window.open('/calendar', '_blank')}
+          >
             View Event Calendar
           </Button>
         </div>

@@ -42,7 +42,7 @@ const TimingsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-secondary/30">
+    <section id="timings" className="py-20 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
